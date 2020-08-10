@@ -1,0 +1,16 @@
+{
+  "name": "instagram-following-monitoring",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/baitun/instagram-following-monitoring.git",
+  "author": "Yury Savin <yury@savin.dev>",
+  "license": "MIT",
+  "scripts": {
+    "start": "rollup -cw",
+    "build": "rollup --config"
+  },
+  "devDependencies": {
+    "rollup": "^2.18.1",
+    "rollup-plugin-terser": "^6.1.0"
+  }
+}
