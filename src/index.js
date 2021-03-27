@@ -36,15 +36,9 @@
 
     let x = window.open();
     x.document.open();
+    const json = JSON.stringify(users, null, 2);
     x.document.write(
-      `<html>
-        <title>${mode}</title>
-        <body>
-          <pre>
-          ${JSON.stringify(users, null, 2)}
-          </pre>
-        </body>
-      </html>`
+      `<html><title>${mode}</title><body><pre>${json}</pre></body></html>`
     );
     x.document.close();
   }
