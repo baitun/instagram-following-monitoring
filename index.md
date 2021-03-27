@@ -1,37 +1,6 @@
-## Welcome to GitHub Pages
+# Instagram followers bookmarklet
 
-You can use the [editor on GitHub](https://github.com/baitun/instagram-following-monitoring/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Drag and drop this link to bookmarks bar:  
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/baitun/instagram-following-monitoring/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<a href='javascript:!function(){"use strict";!async function(){const e=`https://www.instagram.com/${location.pathname.split("/")[1]}/?__a=1`,o=await fetch(e).then(e=>e.json());console.log(o);const t=o.graphql.user.id;for(const e of["following","followers"]){let o=[],l=void 0;do{let n={query_hash:"followers"==e?"c76146de99bb02f6415203be841dd25a":"d04b0a864b4b54837c0d870b0e77e076",variables:JSON.stringify({id:t,first:50,after:l})},s=new URL("https://www.instagram.com/graphql/query/");s.search=new URLSearchParams(n).toString();let a=await fetch(s).then(e=>e.json());const r="followers"==e?a.data.user.edge_followed_by:a.data.user.edge_follow;o.push(...r.edges),l=r.page_info.end_cursor}while(l);let n=o.map(e=>e.node).map(({profile_pic_url:e,...o})=>o);console.table(n);let s=window.open();s.document.open();const a=JSON.stringify(n,null,2);s.document.write(`<html><title>${e}</title><body><pre>${a}</pre></body></html>`),s.document.close()}}()}();
+'>followers</a>
