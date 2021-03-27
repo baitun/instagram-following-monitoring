@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/baitun/instagram-following-monitoring.git",
-  "author": "Yury Savin <yury@savin.dev>",
   "license": "MIT",
   "scripts": {
     "start": "rollup -cw",
-    "build": "rollup --config"
+    "build": "rollup --config && node build.js"
   },
   "devDependencies": {
     "rollup": "^2.18.1",
