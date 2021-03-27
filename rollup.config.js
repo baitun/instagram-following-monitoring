@@ -4,7 +4,7 @@ export default {
   input: "./src/index.js",
   output: {
     format: "iife",
-    file: "./dist/dist.js",
+    file: "./dist/bookmarklet.js",
     indent: false,
   },
   plugins: [terser()],

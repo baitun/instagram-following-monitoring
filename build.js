@@ -1,7 +1,8 @@
 const fs = require("fs");
 
-const js = fs.readFileSync("dist/dist.js").toString();
+const js = fs.readFileSync("dist/bookmarklet.js").toString();
+const template = fs.readFileSync("src/template.html").toString();
 
-const md = `<a href='javascript:${js}'>followers</a>`;
+const html = template.replace(/\$\{js\}/, js);
 
-fs.writeFileSync("README.md", md);
+fs.writeFileSync("dist/index.html", html);
