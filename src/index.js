@@ -50,7 +50,9 @@ function combine({ following, followers }) {
     })
     .map((user) => ({ ...user, type: "following" }));
 
-  const allUsers = [...mutual, ...uniqueFollowers, ...uniqueFollowing];
+  let allUsers = [...mutual, ...uniqueFollowers, ...uniqueFollowing];
+
+  allUsers = allUsers.sort((a, b) => a.id - b.id);
 
   return allUsers;
 }
